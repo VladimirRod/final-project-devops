@@ -23,4 +23,4 @@ jobs:
     - name: Build the image
       run: docker build . --file django-pg-docker-tutorial/Dockerfile --tag ${{ secrets.DOCKER_HUB_USERNAME }}/django-app:latest
     - name: Push to Docker Hub
-      run: docker push ${{secrets.DOCKER_HUB_USERNAME}}/django-pg
+      run: docker push ${{secrets.DOCKER_HUB_USERNAME}}/django-app
