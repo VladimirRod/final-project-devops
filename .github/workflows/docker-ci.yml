@@ -21,6 +21,6 @@ jobs:
         username: ${{ secrets.DOCKER_HUB_USERNAME }}
         password: ${{ secrets.HUB_ACCESS_TOKEN }}
     - name: Build the image
-      run: docker build . --file django-app/Dockerfile --tag ${{ secrets.DOCKER_HUB_USERNAME }}/django-app:latest
+      run: cd django-app && docker build . --tag ${{ secrets.DOCKER_HUB_USERNAME }}/django-app:latest
     - name: Push to Docker Hub
       run: docker push ${{secrets.DOCKER_HUB_USERNAME}}/django-app
